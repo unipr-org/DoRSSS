@@ -1,13 +1,13 @@
 FROM ubuntu:jammy
 
-# RUN apt-get update && apt-get install -y python3 python3-pip python3-sphinx make \
-
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Rome
 
 RUN apt-get update && apt-get install -y python3 python3-pip \
-latexmk texlive-latex-base texlive-latex-extra \
-python3-sphinx
+    latexmk texlive-latex-base texlive-latex-extra \
+    texlive-science texlive-fonts-recommended texlive-fonts-extra \
+    texlive-lang-greek texlive-plain-generic \
+    python3-sphinx
 
 RUN apt-get install libgtest-dev build-essential cmake -y
 WORKDIR /usr/src/googletest
@@ -46,6 +46,6 @@ RUN apt-get install gnuplot -y
 
 # WORKDIR dependencies
 COPY ./pip-requirements.txt pip-requirements.txt
-RUN pip install --break-system-packages -r pip-requirements.txt
+RUN pip install -r pip-requirements.txt
 
 WORKDIR /Isolette
