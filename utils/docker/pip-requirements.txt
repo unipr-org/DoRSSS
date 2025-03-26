@@ -1,0 +1,3 @@
+sphinxcontrib.tikz
+sphinxcontrib-bibtex
+sphinxcontrib-blockdiag

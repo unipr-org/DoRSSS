@@ -1,0 +1,10 @@
+services:
+    isolette:
+        image: isolette-ubuntu
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: isolette-ubuntu
+        hostname: isolette-ubuntu
+        volumes:
+            - ../Isolette/:/Isolette/
