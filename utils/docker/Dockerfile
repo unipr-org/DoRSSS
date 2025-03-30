@@ -48,4 +48,6 @@ RUN apt-get install gnuplot -y
 COPY ./pip-requirements.txt pip-requirements.txt
 RUN pip install -r pip-requirements.txt
 
+RUN pip install --upgrade sphinx==8.1.3
+
 WORKDIR /Isolette
