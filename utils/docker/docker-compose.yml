@@ -7,4 +7,4 @@ services:
         container_name: isolette-ubuntu
         hostname: isolette-ubuntu
         volumes:
-            - ../Isolette/:/Isolette/
+            - ./Isolette/:/Isolette/
