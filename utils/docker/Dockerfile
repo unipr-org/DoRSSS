@@ -26,6 +26,9 @@ RUN apt-get install libboost-thread1.83-dev -y
 RUN apt-get install libboost-system1.83-dev -y
 RUN apt-get install libboost-all-dev -y
 
+RUN pip3 install --upgrade pip
+RUN pip3 install packaging
+RUN apt-get install python3-packaging
 
 RUN apt-get install gcc-12 g++-12 -y
 
@@ -47,7 +50,7 @@ RUN apt-get install gnuplot -y
 # WORKDIR dependencies
 COPY ./pip-requirements.txt pip-requirements.txt
 RUN pip install -r pip-requirements.txt
-
+RUN pip install strictdoc
 RUN pip install --upgrade sphinx==8.1.3
 
 WORKDIR /Isolette
